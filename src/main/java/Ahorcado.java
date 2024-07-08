@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -12,9 +13,7 @@ public class Ahorcado {
 
         // Crear un array para la palabra adivinada
         char[] adivinada = new char[palabraSecreta.length()];
-        for (int i = 0; i < adivinada.length; i++) {
-            adivinada[i] = '_';
-        }
+        Arrays.fill(adivinada, '_');
 
         // Variables para el juego
         int intentos = 6;
@@ -45,8 +44,8 @@ public class Ahorcado {
 
             // Verificar si la palabra ha sido adivinada
             juegoTerminado = true;
-            for (int i = 0; i < adivinada.length; i++) {
-                if (adivinada[i] == '_') {
+            for (char c : adivinada) {
+                if (c == '_') {
                     juegoTerminado = false;
                     break;
                 }
